@@ -33,4 +33,22 @@ for (let i = 0; i < 10; i++) {
   module.exports.add( getFakeName(), getFakeTweet() );
 }
 
+// module.exports.list();
+// nodeconsole.log(list());
+
+// const names = [], tweets = [];
+
+// for (let i = 0; i < 10; i++) {
+//     var name = getFakeName();
+//     var tweet = getFakeTweet()
+//   names.push(name);
+//   tweets.push(tweet);
+// }
+
+// console.log(names);
+// console.log(tweets);
+
+// module.exports.add(names, tweets);
+// console.log(find());
+
 console.log(data);
