@@ -2,6 +2,7 @@ const express = require( 'express' );
 const app = express(); // creates an instance of an express application
 const chalk = require('chalk');
 const nunjucks = require('nunjucks');
+const routes = require('./routes');
 
 var locals = {
   title: 'Nunjucks Example',
@@ -25,8 +26,9 @@ app.use(function (req, res, next) {
     next();
 })
 
-app.get('/', function(req, res){
-  res.render('index', locals)
-})
+app.use('/', routes);
+// app.get('/', function(req, res){
+//   res.render('index', locals)
+// })
 
 
