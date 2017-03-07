@@ -15,8 +15,9 @@ router.get('/users/:name', function(req, res) {
   console.log("logging list next")
   console.log(list);
   //we want to render the content in the list array for the given name of a specific object in the array.
-  res.render( 'index', { tweets: list } );
+  res.render( 'index', { tweets: list, showForm: true, username: req.params.udername } );
 });
+//added a username capture here
 
 router.get('/tweets/:id', function(req, res) {
   var id = req.params.id;
