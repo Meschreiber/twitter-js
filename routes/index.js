@@ -8,8 +8,8 @@ router.get('/', function (req, res) {
   res.render( 'index', { tweets: tweets } );
 });
 
-router.get('/stylesheets', function(req, res) {
-  res.sendFile('/Users/Tina/Projects/grace_hopper/twitter-js/public/stylesheets/style.css');
-});
+// router.get('/stylesheets', function(req, res) {
+//   res.sendFile('/Users/maria/Desktop/GraceHopper/twitter-js/public/stylesheets/style.css');
+// });
 
 module.exports = router;
