@@ -8,6 +8,13 @@ router.get('/', function (req, res) {
   res.render( 'index', { tweets: tweets } );
 });
 
-
+router.get('/users/:name', function(req, res) {
+  var name = req.params.name;
+  var list = tweetBank.find( {name: name});
+  console.log("logging list next")
+  console.log(list);
+  //we want to render the content in the list array for the given name of a specific object in the array.
+  res.render( 'index', { tweets: list } );
+});
 
 module.exports = router;
