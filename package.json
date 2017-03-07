@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Meschreiber/twitter-js#readme",
   "dependencies": {
     "chalk": "^1.1.3",
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "nunjucks": "^3.0.0"
   }
 }
