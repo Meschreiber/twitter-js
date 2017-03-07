@@ -17,10 +17,6 @@ nunjucks.configure('views', {noCache: true});
 app.set('view engine', 'html');
 app.engine('html', nunjucks.render);
 
-app.listen(3000, function(){
-    console.log('server listening');
-});
-
 app.use(function (req, res, next) {
     console.log(chalk.red(req.method) + ' ' + chalk.blue(req.route));
     next();
@@ -31,4 +27,6 @@ app.use('/', routes);
 //   res.render('index', locals)
 // })
 
-
+app.listen(3000, function(){
+    console.log('server listening');
+});
