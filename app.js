@@ -4,6 +4,7 @@ const chalk = require('chalk');
 const path = require('path');
 const nunjucks = require('nunjucks');
 const routes = require('./routes');
+const bodyParser = require('body-parser');
 
 var locals = {
   title: 'Nunjucks Example',
@@ -19,17 +20,23 @@ app.set('view engine', 'html');
 app.engine('html', nunjucks.render);
 
 
-app.use('/', routes);
 
 // app.get('/', function(req, res){
 //   res.render('index', locals)
 // })
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use('/', routes);
+
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(function (req, res, next) {
     console.log(chalk.red(req.method) + ' ' + chalk.blue(req.route));
     next();
 })
+
 
 // Always put the listener last
 app.listen(3000, function(){
